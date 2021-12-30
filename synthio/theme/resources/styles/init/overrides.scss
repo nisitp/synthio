@@ -1,0 +1,127 @@
+// Override ugly theme/custom-added font stuff
+
+.qodef-custom-font-holder,
+.praheader h1, .praheader h1 * {
+ 	font-family: unquote(map-get($typefaces, 'special')) !important;
+ 	font-weight: 500 !important;
+}
+
+
+body, html {
+    margin: 0;
+}
+
+body, .qodef-wrapper {
+ background: $brand-lighter-gray;
+}
+
+body.with-hero, body.with-hero .qodef-wrapper {
+   background: $brand-white;
+}
+
+.qodef-content {
+  background: $brand-white;
+}
+
+.qodef-content .qodef-container-inner {
+  > div,
+  > h2, 
+  > h3
+  > section {
+    margin-top: $gutter*2;
+    &:first-child,
+    &.wp-block-columns {
+      margin-top: auto;
+    }
+  }
+  >h2{
+	   @media #{$breakpoint-sm-dn} {
+       	margin-top: $gutter*0.5;
+       }
+  }
+  > section {
+    margin-bottom: $gutter*2;
+    
+/*
+    @media #{$breakpoint-xs-only} {
+        margin-bottom: $gutter*2;
+    }
+*/
+    @media #{$breakpoint-sm-dn} {
+        margin-bottom:0;
+        padding-bottom: 0;
+    }
+  }  
+  
+  p, li, ul {
+    color: $body-color;
+    font-size: $font__size_base;
+     @media #{$breakpoint-xs-only} {
+	     font-size: $font__size_base-xs;
+     }
+  }
+  
+/*
+  > p,
+  > ul, 
+  > ol {
+	   @media #{$breakpoint-md-up} {
+	   	@include row();  
+	   	@include col(10);
+	   	@include col-offset(sm,1);   
+	   }
+  }
+*/
+
+  > .wp-block-columns {
+    @include col-offset(sm, 1);
+  }  
+  ul, 
+  ol {
+    list-style-position: initial;
+    padding-left: $gutter*3;
+    > li {
+      width: 100%;
+    }    
+  }
+
+  .qodef-pagination ul > li { width: inherit; }
+  
+  a {
+    color: $brand-aqua;
+  }
+}
+
+body {
+  .qodef-content,
+  .qodef-container, 
+  .qodef-container-inner {
+    padding-top: 0;
+    
+    .qodef-container-inner {
+      padding-top: 0 !important;
+      > p{
+	       line-height: 1.5em;
+      }
+    }
+  }
+
+  .qodef-content {
+//     padding-top: $gutter*2;
+  }
+  &.home .qodef-content, &.with-hero .qodef-content {
+    padding-top: 0;
+  }
+  
+}
+
+.qodef-accordion-holder.qodef-boxed .qodef-title-holder .qodef-accordion-mark {
+  background-color: $brand-purple;
+}
+
+body .qodef-container-inner section.zebra-alt {
+  margin-top: $gutter*3;
+  margin-bottom: $gutter*3;
+  background: $brand-lighter-gray;
+  @include angle();
+}

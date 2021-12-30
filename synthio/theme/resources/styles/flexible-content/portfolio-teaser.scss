@@ -1,0 +1,28 @@
+.fc-portfolio-view {  
+  @include row();
+	
+  &__items {
+    display: grid;
+    align-items: stretch;
+    position: relative; // needed so children can be relative too + grow to fit
+	width: 100%;
+    &--item {    
+      position: relative;
+  
+      .portfolio-item {
+//        display: contents;
+//        padding: $gutter;
+		.portfolio-item--teaser--inner{
+	    	@extend %tight-text;
+      	}
+      }
+    }
+    
+    @media #{$breakpoint-md-up} {
+      grid-template-columns: repeat(3, 1fr);    
+      grid-column-gap: $gutter;
+      grid-row-gap: $gutter;
+    }
+    
+  }
+}

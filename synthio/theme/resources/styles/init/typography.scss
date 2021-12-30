@@ -1,0 +1,118 @@
+$fa-font-path: "../webfonts";
+
+@import "../../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+@import "../../../node_modules/@fortawesome/fontawesome-free/scss/solid";
+@import "../../../node_modules/@fortawesome/fontawesome-free/scss/brands";
+@import "../../../node_modules/@fortawesome/fontawesome-free/scss/v4-shims";
+
+$font__size_base: 21px;
+$font__size_base-xs: 16px;
+$font__size-ratio: 1;
+
+$font__size-xxs:   1em / (1.5 * $font__size-ratio);
+$font__size-xs:    1em / (1.35 * $font__size-ratio);
+$font__size-sm:    1em / (1 * $font__size-ratio);
+$font__size-md:    1em * (1 * $font__size-ratio);
+$font__size-lg:    1em * (1.25 * $font__size-ratio);
+$font__size-xl:    1em * (1.5 * $font__size-ratio);
+$font__size-xxl:   1em * (1.5 * $font__size-ratio);
+$font__size-xxxl:  1em * (2.25 * $font__size-ratio);
+
+$font__line-height-body: 1.8;
+$font__line-height-pre: 1.6;
+$font__line-height-heading: 1.2;
+$font__line-height-double:  2 * $font__line-height-heading;
+
+body {
+	font-family: unquote(map-get($typefaces, 'main')); 
+  font-weight: 400;
+  font-size: 18px;
+}
+
+%no-hover {
+  &:hover {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+/* Set some helpers for typical sizes so if we need to we can have e.g. an <h3> that looks like an h1. */
+%h1 {
+  font-size: $font__size-xxxl; 
+  font-weight: 300;
+  line-height: 1.2em;
+  color: $brand-light-blue;
+/*
+  @media #{$breakpoint-md-up} {
+      font-size: 3vw;
+  }    
+  @media #{$breakpoint-xl-up} {  
+    font-size: 60px;
+  }
+*/
+}
+
+%h2 {
+  font-size: $font__size-xxl;  
+  font-weight: 300;  
+  @media #{$breakpoint-md-up} {
+//       font-size: 2.5vw;
+      text-align: center;
+  }    
+  @media #{$breakpoint-xl-up} {  
+//    font-size: 52px;
+  }
+  
+}
+
+%h3 {
+  font-size: $font__size-xl; 
+  font-weight: 300;
+ 	line-height: 1.5em;    
+}
+
+%font-main {
+ 	font-family: unquote(map-get($typefaces, 'main'));    
+}
+
+%font-special {
+ 	font-family: unquote(map-get($typefaces, 'special'));    
+}
+
+h1, h2, h3, h4, h5  {
+  @extend %font-special; /// hate to do it, but need to override ugly manually-added stuff
+  font-weight: 300;
+  color: $brand-blue; 	
+  padding-bottom: $gutter;
+}
+
+h1 { @extend %h1; }
+h2 { @extend %h2; }
+h3 { @extend %h3; }
+
+p, ul, ol {
+   margin-bottom: $gutter;  
+   line-height: 1.5em;
+}
+
+%tight-text { 
+  p {
+    line-height: 1.5em;
+  }
+}
+
+// Legacy ugly banner headers
+
+.wpb_wrapper h1 {
+  padding-left: $gutter/2;
+}
+
+h1.entry-title {
+  @include row();
+  margin-top: $gutter;
+  
+  .page-template-full-width & {
+    //assume this template is only used for legacy pages, which have crazy builder headers
+    display: none;
+  }
+}

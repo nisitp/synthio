@@ -1,0 +1,195 @@
+.fc-icon-list {
+    margin-bottom: 10px;
+    
+    &__container {
+        @include row();
+    }
+
+    &__inner {
+        @include col();
+    }
+
+    &__title {
+        font-size: 1.5em;
+        // max-width: 300px;
+        margin: 0px auto 30px auto;
+        text-align: center;
+    }
+
+    &__desc {
+        font-size: 1em;
+        line-height: 1.4em;
+        // max-width: 300px;
+        margin: 0px auto 30px auto;
+        text-align: center;
+    }
+
+    &__solutions {
+        @include row(true);
+
+        // max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+        display: grid;
+        
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        
+    }
+
+    &__solution {
+        @include col();
+        @extend %no-decoration;
+        font-size: 1.2em;
+//         font-weight: 700;
+        text-decoration: none;
+        color: inherit;
+        text-align: center;
+
+        &--vertical {
+            @include col(12);
+            @include row(true);
+
+            font-size: 1em;
+            text-align: left;
+            align-items: center;
+
+            .fc-icon-list__solution-icon {
+                @include col();
+                flex-grow: 0;
+                flex-shrink: 0;
+                float: left;
+            }
+
+            .fc-icon-list__solution-desc {
+                @include col();
+                float: left;
+                margin-bottom: 15px;
+            }
+        }
+
+/*
+        &--orange[href]:hover { color: $brand-orange; }
+        &--light-blue[href]:hover { color: $brand-blue; }
+        &--dark-blue[href]:hover { color: $brand-dark-blue; }
+        &--dark-green[href]:hover { color: $brand-dark-green; }
+*/
+
+        &[href]:hover > .fc-icon-list__solution-icon {
+
+//            background-color: $brand-light-orange;
+
+/*
+            &--orange { background-color: lighten($brand-orange, 5%); }
+            &--light-blue { background-color: lighten($brand-blue, 5%); }
+            &--dark-blue { background-color: lighten($brand-dark-blue, 5%); }
+            &--dark-green { background-color: lighten($brand-dark-green, 5%); }
+*/
+        }
+        
+        &--detail {
+          margin: 0px;
+          p, ul {
+            font-weight: 300;
+            margin: 0;
+            text-align: left;
+          }
+        }
+        
+    }
+
+    &__solution-icon {
+        height: 70px;
+        width: 70px;
+        flex-basis: 70px !important;
+        margin: 0 auto;
+//        border-radius: 50%;
+//        background-color: $brand-orange;
+        font-size: 35px;
+        line-height: 70px;
+        color: $brand-white;
+        text-align: center;
+        color: $brand-blue;
+
+/*
+        &--orange { background-color: $brand-orange; }
+        &--light-blue { background-color: $brand-blue; }
+        &--dark-blue { background-color: $brand-dark-blue; }
+        &--dark-green { background-color: $brand-dark-green; }
+*/
+
+        @media #{$breakpoint-sm-up} {
+/*
+            height: 110px;
+            width: 110px;
+*/
+            flex-basis: 110px !important;
+//             font-size: 55px;
+//             line-height: 110px;
+        }
+    }
+
+ &.bordered-grid .fc-icon-list__solutions {
+  
+   @media #{$breakpoint-md-up} {
+     @include col-offset('md', 1);
+     @include col(10);
+  }
+   
+   @include shadowed(-1px, 7px, 15px, rgba(0,0,0,.24));
+   @include borders(curved, transparent);      
+   
+   /* Use css grid to make the gridlines */
+   background: $brand-lighter-gray;
+   grid-gap: 1px;
+   
+   margin-bottom: $gutter*2;   
+
+   .fc-icon-list__inner {
+     margin: 0;
+   }
+   
+   .fc-icon-list__solution {
+     background: $brand-white;
+     box-shadow: none;
+     margin: 1px;
+     padding: $gutter;
+     text-align: center;
+     z-index: 1;
+          
+     .fc-icon-list__solution-icon {
+       width: 62px;
+       height: 62px;
+       margin-bottom: $gutter*2;
+     }
+     
+     .fc-icon-list__solution-desc {
+       display: block;
+       margin-bottom: $gutter * 2;
+     }
+
+  /*     
+     .fc-features--feature__content {      
+       @extend %tight-text;
+       &::after {
+         @include pseudo();
+         @extend %button;
+         position: static;
+         display: none;
+         margin: $gutter*.5 auto;
+         padding: $gutter $gutter*2;
+         line-height: 1em;
+         content: "Learn More";
+         color: $brand-blue;
+         background: $brand-white;
+        }
+      }
+      
+     .fc-features--feature__content:hover::after {
+      background: darken($brand-white, 5%);
+      color: $brand-blue;
+     }
+  */
+
+}
+  }
+}

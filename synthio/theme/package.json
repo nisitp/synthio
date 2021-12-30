@@ -1,0 +1,35 @@
+{
+  "name": "synthio2019",
+  "version": "1.0.0",
+  "description": "Synthio Theme",
+  "author": "Hot Sauce Atlanta",
+  "private": true,
+  "scripts": {
+    "build": "gulp"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.5",
+    "@babel/preset-env": "^7.7.6",
+    "@fortawesome/fontawesome-free": "^5.12.0",
+    "connect-livereload": "^0.6.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-combine-mq": "^0.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-js-import": "^1.0.6",
+    "gulp-livereload": "^4.0.2",
+    "gulp-newer": "^1.4.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2"
+  },
+  "dependencies": {
+    "js-cookie": "^2.2.1",
+    "yarn": "^1.21.1"
+  }
+}

@@ -1,0 +1,40 @@
+@import 'mixins';
+
+body.page-template-default .qodef-content-inner {
+	@include row();
+
+	> .qodef-container {
+  	width: 100% !important;
+    > .qodef-container-inner {
+      width: auto !important;
+      padding: 0 $gutter;
+    }
+	}
+}
+
+.qodef-grid {
+  width: auto !important;
+}
+
+
+%grid {
+  display: grid;
+  
+  place-items: start;
+  > * {
+    width: 100%;
+  } 
+  
+  > [style^='--aspect-ratio']::before {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 0;
+    padding-bottom: calc(100% / (var(--aspect-ratio)));  
+  }
+}
+
+
+.wp-block-mkl-section-block {
+  margin: $gutter*3 0 $gutter*4;
+}

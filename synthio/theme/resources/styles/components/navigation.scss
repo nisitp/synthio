@@ -1,0 +1,529 @@
+/* Resets to the previous theme */
+.qodef-top-bar { 
+  background: transparent;
+  color: black;
+  z-index:111;
+  text-align: right;
+ 
+  // make it not have height
+  height: 0;
+  overflow: visible; 
+   
+  @include row();
+  margin: 20px auto 0 auto;
+  padding-right: 25px;
+ 
+  .widget_nav_menu ul 
+  {
+    margin: 0;
+    margin-top: -20px;
+
+    li {
+      line-height: 1;     
+      padding: $gutter/2;
+
+      a {
+        &::before {
+          right: -($gutter/2)
+      }
+
+      color: $brand-dark-blue;
+      padding: 0;
+      margin: 0;
+       
+      &:hover {
+        color: black;
+      }
+       
+      .not-home.with-hero & {
+        color: $brand-white;
+        &:hover {
+          color: darken($brand-white, 10%);
+        }
+      }
+    }
+     
+/*
+  	 .background--dark &, .with-hero & {
+      .widget_nav_menu ul li  {
+  			color: $brand-white;
+  			
+  			&:hover {
+    			color: $brand-white;
+  			}
+  		}
+  	 }
+*/
+  	 
+    }
+  }
+}
+
+.qodef-sticky-header {
+  display: none !important;
+}
+
+.qodef-menu-area{
+  @include row();
+  
+  .qodef-grid {
+    width: 100% !important;
+  }
+  
+  .qodef-logo-wrapper{
+    margin-bottom: 20px;    
+    // replace the silly Select stuff
+    background:transparent url(../img/synthio-logo-blue.svg) no-repeat;
+    body.not-home.with-hero & {
+      background-image:url(../img/synthiologo-transparent.svg);      
+    }
+    width: 203px; 
+    height: 52px;
+    padding: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    img { 
+      display: none;
+    }
+    a {
+      display: block;
+      width: 100%;
+      height: 100% !important;
+    }
+  }
+  
+  .qodef-vertical-align-containers {
+	  padding: 0;
+  }
+}
+
+/*
+.header-appear {
+  margin: 0 auto; 
+}
+*/
+
+.qodef-header-standard .qodef-menu-area {
+  background: transparent;
+}
+
+
+.qodef-main-menu {
+
+  padding-top: 20px; 
+  margin-top: 42px;
+
+  #menu-synthio-menu {
+    padding-right: 20px;
+    
+    li a .item_inner {
+      padding: 0 .25em;
+      color: $brand-dark-blue;
+      
+      &:hover {
+        color: black;
+      }
+
+      @media #{$breakpoint-lg-up} {      
+        padding: 0 .5em;            
+      }
+    }
+
+  
+  
+    > li > a {
+      
+      // quick fix for small desktop/tablet
+      font-size: 14px;
+/*
+      @media #{$breakpoint-lg-up} {      
+        font-size: 16px;        
+      }
+*/
+      
+      &.current .item_text {
+        border-bottom: 1px solid $brand-gray;
+      }
+    }
+
+    body.with-hero & {
+      > li > a {
+        &.current .item_text {
+          border-bottom: 1px solid rgba(255,255,255,.8);
+        }
+        &.current[title*=Demo] .item_text {
+          border-bottom: none;
+        }
+      }      
+    }        
+    
+    > li:last-child a.current .item-text, li#nav-menu-item-19969 a.current .item_text {
+      border-bottom: none;
+    }
+    
+  }
+  
+  
+  // Alternate nav when we're showing the gradient hero
+  .not-home.with-hero & #menu-synthio-menu {
+    li a .item_inner {
+      color: $brand-white;
+      
+      &:hover {
+        color: darken($brand-white, 10%);
+      }    
+    }
+  }
+  
+    
+  
+  
+
+	.second {
+   	border: none !important;  	
+  	li { border: none !important; }
+  	
+  	border: none;
+  	@include borders(curved);
+  	border-radius: 3px;
+  	padding: 0;
+    background: $brand-dark-blue;  	    	
+    margin-top: -10px;
+      
+/*
+  	background: rgba(255,255,255,.85);
+  	
+  	.home & { // expand in future to be more generic
+      background-image: linear-gradient(132deg, #A2226A 0%, #830F50 100%);
+  	}
+*/
+  	
+  	* {
+    	font-size: 16px;
+    	line-height: 1.5;
+    	color: white;
+    	font-weight: bold;    	
+  	}
+  	
+  	> .inner {
+    	background: transparent !important;
+    	border: none !important;
+    	padding: $gutter;
+    	padding-top: 10px;
+    	
+    	// caret 
+    	&::before {
+      	@include pseudo();
+        @extend %fa-icon;
+        @extend .fas;
+        content: '\f0d8';
+        font-size: 30px;
+        color: $brand-dark-blue;
+/*
+        color: rgba(255,255,255,.85);
+        .home & {
+          color: #A2226A;
+        }
+*/
+        
+      	width: 20px;
+      	height: 20px;
+      	position: absolute;
+      	top: -18px;
+    	}
+    	ul {
+      	padding: 0;
+      	margin-top: 0;
+      	background: none !important;      	
+      	display: grid !important;
+      	
+      	// undo two columns
+//      	grid-template-columns: 1fr 1fr;
+      	grid-template-columns: 1fr;
+      	grid-column-gap: 20px;
+    	}
+    	ul li {
+      	&:first-child {
+        	margin-top: 10px;
+      	}
+      	display: block;
+      	width: auto !important;
+
+        list-style-position: inside;      	
+      	margin: 0 0 10px 0;
+      	white-space: nowrap;
+      	
+/* replace if go back to two cols
+      	&:nth-child(even) {
+        	text-align: right;
+        	justify-self: right;
+      	}
+*/
+      	a {
+        	color: $brand-black;
+        	padding: 0;
+        	font-weight: bold;
+        	&:hover {
+          	
+          	color: $brand-white;
+          	padding: 0 !important;
+          	margin: 0 !important;
+          	* {
+            	padding: auto !important;
+              margin: 0 !important;            	
+          	}
+        	}
+
+        	.menu_icon_wrapper { display: none !important; }
+      	}
+    	}
+  	}
+	}
+	
+  .wide .second {
+    // more overriding select which wants this to be a full width element, which we don't want.
+  	left: 0 !important;
+  	.inner ul {
+    	width: auto !important;      	
+    	min-width: 340px;    	
+    	
+    	li a {
+      	font-size: 16px;
+      	font-weight: auto;
+    	}
+  	}
+  }
+	
+	
+	
+  
+	ul li {
+		font-family: unquote(map-get($typefaces,'main'));
+		height: auto !important;
+		
+		&:last-child {
+  		margin-top: 5px;
+		}
+
+		.item_inner {
+  		padding: 0 .75vw; 
+		 }
+
+		a {
+      font-size: 18px;		
+      font-weight: 500;
+      font-weight: bold;
+    }
+    
+    &.menu-item-has-children {
+      &::after {
+        @include pseudo();
+        
+      }
+    }
+	}
+
+	>ul>li.qodef-active-item>a .item_outer:before, >ul>li:hover>a .item_outer:before {
+		display: none;
+	}
+	
+	>ul>li:hover>a, 
+	>ul>li.qodef-active-item>a {
+		color: inherit;
+	}
+	
+/*
+	&.background--dark, .home &, .with-hero & {
+		> ul > li > a {
+			color: $brand-white;
+			
+			&:hover {
+  			color: $brand-white;
+			}
+		}
+	}
+*/
+	
+	/* Reset navigation stuff */
+	.inner ul li, .qdef-drop-down {
+  	a {    	
+    	&::before {
+      	display: none !important;
+    	}
+    	&:hover {
+      	padding: 0 25px !important;
+    	}
+
+    	transition: none !important;
+  	}
+	}
+
+  li#nav-menu-item-19969 a, a[title='Free Trial'], .background--dark a[title='Free Trial'] {
+//    .item_inner {
+      // could change this to use fancy-button at some point.
+      @extend %button;
+      padding: 3px !important; // this controls the size of the 'border'
+//      padding: 8px $gutter !important;
+      margin-top: -40px;
+
+
+
+//      background-image: linear-gradient(133deg, $brand-green 0%, darken($brand-green, 10%) 100%) !important;
+      background-image: linear-gradient(90deg, #453C9E 2%, #42E8E0 100%) !important;
+      border: none !important;
+//      color: #233E81 !important;
+      font-size: 14px;
+      position: relative;
+      
+      .item_outer {
+        border-radius: 26px;
+        background: white;
+        line-height: 44px;
+        position: relative;
+        padding: 0 10px;
+        top: 22px;
+
+        * {
+          color: $brand-dark-blue !important;
+        }
+        &:hover {
+          background: transparent;
+          * {
+            color: $brand-white !important;            
+          }
+        }
+
+      }
+    // }
+  }	
+}
+
+
+// mobile nav
+.qodef-mobile-header {
+  .qodef-grid {
+    padding: 0 $gutter;
+  }
+  .qodef-mobile-logo-wrapper {    
+    background:transparent url(../img/synthio-logo-blue.svg) no-repeat;
+    width: 203px; 
+    height: 48px;
+    padding: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    img { 
+      display: none;
+    }
+    a {
+      display: block;
+      width: 100%;
+      height: 100% !important;
+    }
+  }
+  
+  .qodef-mobile-nav {
+    a {
+      font-weight: bold;
+      color: $brand-aqua;
+      &:hover {
+        color: $brand-blue;
+      }
+    }
+    
+  }
+  
+  .qodef-mobile-menu-opener a:hover {
+    color: $brand-aqua !important;
+  }
+}
+
+// override crazy logo shenanigans
+.qodef-page-header {
+  
+  margin-bottom: $gutter;
+  
+  .qodef-vertical-align-containers {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    align-items: end;
+    padding: 0 $gutter;
+    @media #{$breakpoint-lg-up} {
+      padding: 0;
+    }
+
+    
+    .qodef-position-left {
+      &::before {
+        display: none;
+      }
+      float: none;
+      height: auto;
+      
+      a {
+        width: 100%;
+        height: auto;
+      }
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    
+    .qodef-position-right {
+      position: relative;
+      padding-right: $gutter;
+      .qodef-search-opener {
+        position: absolute;
+        top: 0;
+        right:0;
+      //  color: white;
+      }
+      
+    }
+    .qodef-main-menu {
+      width: 100%;
+    }
+    
+    
+  }
+}
+
+footer #menu-social-media-links {
+  li {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    font-size: 0;
+    a {
+      @extend %fa-icon;
+      @extend .fab;
+      color: white !important;
+       &::before {
+//      @include pseudo();
+      	width: 100%;
+	  	height: 100%;
+	  	font-size: 24px;
+      }
+
+      &:hover { 
+        text-decoration: none;
+        color: darken(white, 10%) !important;
+      }
+    }
+   
+    // stupid fontawesome plugin uses variables instead of css maps so need to provide a workaround
+    $socialicons: (
+      'facebook': $fa-var-facebook,
+      'linkedin': $fa-var-linkedin,
+      'instagram': $fa-var-instagram,
+      'twitter': $fa-var-twitter
+    );
+    
+    @each $dest in ('facebook' 'linkedin' 'instagram' 'twitter') {
+      &.#{$dest} a::before {
+        content: fa-content(map-get($socialicons, $dest));
+      }
+    }
+    
+  }
+}

@@ -1,0 +1,84 @@
+.fc-features {
+  @include row();
+
+  &--feature--inner * {
+    text-align: center;
+  }   
+  
+  &--feature {
+	@media #{$breakpoint-xs-only}{
+		margin-bottom: 30px;		
+	}  
+	
+    @media #{$breakpoint-md-up} {
+//      @include col(4);
+      flex-grow: 1;
+    }
+
+  &.with-icon {
+    padding-bottom: $gutter*3;
+  }    
+    @extend %padded-box;
+    @include borders(curved, transparent);      
+    @include shadowed(-1px, 7px, 15px, rgba(0,0,0,.24));
+    background: $brand-white;
+    overflow: hidden;
+    
+    &--icon-container {
+      position: relative;
+      top: -30px; left: -30px;
+      overflow: hidden;
+      width: 150px;
+      height: 115px;
+      &::before {
+        @include pseudo();
+        width: 200px;
+        height: 200px;
+        left: -50px;
+        top: -85px;
+        z-index: 1; 
+        border-radius: 50%;   
+        background-image: linear-gradient(180deg, #15254D 0%, #0B4888 54%, #0071CE 100%);        
+      }
+
+      
+    }
+        
+    &--icon {
+      position: relative;
+
+      left: $gutter/2;
+//       margin-left: -50px;
+      z-index: 2;
+      height: auto; 
+      width: 72px;
+      margin-left: -$gutter*2;
+      margin-top: $gutter/2;
+//      margin-bottom: -$gutter*2;
+    }
+
+    &__content {
+  	  @extend %tight-text;
+    }
+
+    
+  }
+
+  display: block; 
+  text-align: center;
+
+  @media #{$breakpoint-sm-up} {         
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: $gutter;
+    text-align: left;    
+  }
+  
+  h3 {
+    padding-bottom: 0;
+    font-weight: 300;
+  }
+  .with-icon h3 {
+    margin-top: -$gutter;
+  }
+}

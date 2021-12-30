@@ -1,0 +1,132 @@
+body.page-id-22247,
+body.page-id-22248 {
+  .fc-hero {
+//    @extend %hero-no-overlay;
+
+    .fc-hero__inner {
+      display: block; // undo flex
+      //padding: 0;
+      .fc-hero__main-content{
+	      margin-left: 0;
+      }
+    }  
+    
+    .fc-hero__detail {
+      display: block;
+      padding: 0;
+    
+      .fc-hero__detail-inner {
+        box-shadow: none;
+        background: transparent;
+        border: none;
+        margin-left: 0;      
+        padding: 0 0 0 $gutter;  
+      }      
+    }
+  }
+  .fc-portfolio-view{
+	  &__items{
+		  &--item{
+			  @media #{$breakpoint-xs-only} {
+			  	margin-bottom: $gutter*1.5;
+      		  }
+      		  @media #{$breakpoint-sm-only} {
+			  	margin-bottom: $gutter*1.5;
+      		  }
+		  }
+	  }
+  }
+}
+
+// the form
+
+//form.resource-filter {
+  .resource-filter {
+    label {
+      color: $brand-white !important;
+      font-weight: bold;
+    }
+  }  
+  
+  // Note: DON'T put these into the resource-filter block above!
+  .resources-filter-select {
+        position: relative;
+        box-sizing: border-box;
+        display: inline-block;
+        vertical-align: middle;
+        overflow: hidden;
+        width: 100%;
+        border: 1px solid $brand-black;
+        background-color: $brand-white;
+        padding: 3px 30px 3px 5px;
+        cursor: pointer;
+
+        @media #{$breakpoint-sm-up} {
+            width: 250px;
+        }
+
+        &:after {
+            content: "\f078";
+            font: normal normal normal 14px/1 FontAwesome;
+            position: absolute;
+            top: 5px;
+            right: 8px;
+        }
+
+        span {
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        select {
+            position: absolute;
+            opacity: 0;
+            height: 100%;
+            width: 100%;
+            border: none;
+            background: none;
+            top: 0px;
+            left: 0px;
+
+            &:focus {
+                outline: 0;
+            }
+        }
+    }
+  .resources-filter-submit {
+      @extend %button;
+      position: relative;
+      display: inline-block;
+      padding: .5em $gutter;
+      @media #{$breakpoint-xs-only} {
+	     margin-top: $gutter;
+      }
+      @media #{$breakpoint-sm-up} {
+	      margin-left: $gutter;
+      }
+      span {
+        color: white !important;
+      }
+      text-align: center;
+
+      input {
+          position: absolute;
+          opacity: 0;
+          height: 100%;
+          width: 100%;
+          border: none;
+          background: none;
+          top: 0px;
+          left: 0px;
+          margin: 0;
+
+          &:focus {
+              outline: 0;
+          }
+      }
+
+    }
+  
+//}

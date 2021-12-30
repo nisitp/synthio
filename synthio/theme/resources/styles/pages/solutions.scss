@@ -1,0 +1,17 @@
+body.page-id-22181{
+	h2{
+		text-align: center;
+	}
+	.wp-block-columns{
+		align-items: center;
+		justify-content: center;
+		@media #{$breakpoint-sm-dn} {
+			margin-left: 0 !important;
+		}
+		.wp-block-column{
+			@media #{$breakpoint-sm-dn} {
+				text-align: center;
+			}
+		}
+	}
+}

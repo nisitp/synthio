@@ -1,0 +1,25 @@
+.page-id-15881{
+	.fc-hero {
+		&__content{
+			a{
+				color: $brand-white;
+			}
+		}
+	}
+	.fc-portfolio-view{
+		&__items{
+			&--item{
+				@media #{$breakpoint-sm-dn} {
+					margin-bottom: $gutter*1.5;
+					&:last-child{
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+		+ a {
+			margin-bottom: $gutter*1.5;
+			display: block;
+		}
+	}
+}

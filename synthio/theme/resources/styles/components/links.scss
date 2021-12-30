@@ -1,0 +1,29 @@
+%no-decoration {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+a {
+  color: $brand-purple;    
+  &:hover {
+    text-decoration: underline;
+  }
+}
+h1 a, h2 a, h3 a, h4 a {
+  color: inherit;
+}
+
+
+.qodef-post-info-bottom {
+  min-height: 80px;
+}
+.qodef-social-share-holder {
+  min-height:40px;
+  ul {
+    padding-left: 0 !important;
+  }
+  ul li {
+    width: auto !important;
+  }
+}

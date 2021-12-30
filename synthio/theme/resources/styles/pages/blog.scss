@@ -1,0 +1,51 @@
+body.archive.with-hero, body.blog.with-hero {
+  
+  .fc-hero {
+    margin-bottom: 50px;
+  }
+  .qodef-column2 { // may not be super safe, but... 
+    margin-top: 240px;   
+    
+    .widget {
+      h4 {
+        padding-left: 0;
+        &::before {
+          display: none;
+        }
+      }
+      
+      ul {
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+article.type-post.format-standard {
+  .qodef-blog-standard-post-date {
+    position: absolute;
+  }
+  
+  .qodef-blog-standard-info-holder {
+    margin-left: 70px;    
+    h2.qodef-post-title {
+      text-align: left;
+    }
+  }
+  
+  .qodef-post-image {
+    margin-bottom: $gutter !important;
+  }
+}
+
+
+.single-post {
+  .qodef-sidebar .widget {
+    h4::before {
+      display: none;
+    }
+    ul {
+      padding-left: 0;
+    }
+  }
+}

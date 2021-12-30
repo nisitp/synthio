@@ -1,0 +1,284 @@
+body .mktoForm {
+  
+  .mktoGutter, .mktoOffset { display: none !important; grid-area: hidden; }
+  
+  * {
+   	font-family: unquote(map-get($typefaces, 'main'));
+  }
+ 	  
+  button, .mktoButton {
+    @include fancy-button(white);
+    font-size: 18px !important;
+    padding: $gutter/2 2*$gutter !important;
+    border: none;
+  }
+  
+  .mktoAsterix {
+    color: inherit;
+    padding-right: .5em;
+    float: left;
+  }
+
+  .contactUsFormMessage {
+    width: 800px;
+    
+  }
+  input:focus {
+   outline-width: 0;
+  }
+  
+  // clear out annoying Marketo default blocks
+  .mktoFormRow, .mktoButtonRow {
+    display: block;
+    
+    div {
+      display: inline-block;
+    }
+    div.mktoClear { display: none; }
+  }
+  
+  *::placeholder {
+    color: $brand-form-gray;
+    font-style: italic;
+  }
+  
+  .mktoFieldWrap {
+    
+    input, select, textarea {
+      @include borders('pill');
+      padding: $gutter*.5;
+      background: transparent;
+      font-style: italic;
+    }
+    
+   label { 
+     display: inline-block;
+  		text-align: left;
+  		font-size: 18px;
+  		font-weight: 300;
+  		@media #{$breakpoint-md-up} { 
+  			min-width: 225px;
+  		}
+
+  		&.mktoLabel, span {
+    		align-self: center;
+  			color: $brand-dark-blue;
+  			font-size: 18px !important;
+  			font-family: unquote(map-get($typefaces, 'main')) !important;  
+  			font-weight: bold;
+  		}
+  	}
+  }
+	
+	.mktoButtonRow {
+  	clear: both;
+		display: inline-block;
+//		margin-top: $gutter*2;
+		@media #{$breakpoint-md-up} { 
+			display: block;
+  			.mktoButtonWrap{
+  				display: block;
+  				text-align: center;
+  			}			
+      }
+    }
+  
+
+	input, select, textarea{
+		border-color: $brand-gray;
+		box-shadow: none !important;
+
+		@media #{$breakpoint-md-up} { 
+			min-width: 225px;
+		}
+	}
+	select{
+		line-height: 120%;
+	}
+	
+	input[type=checkbox] + label:before,input[type=radio] + label:before {
+  	box-shadow: none;
+  	border-radius: 32px;
+	}
+  // specific forms. Keep inclosed under the main .mktoForm to aid with specificity.
+  
+  &#mktoForm_1156, &#mktoForm_1129, &#mktoForm_1207  {
+   
+    .mktoFormCol {    
+      @media #{$breakpoint-sm-dn} {    
+        @include row();
+        display: block;
+        margin-bottom: $gutter;
+      }
+    }
+        
+    .mktoFormRow {
+      @media #{$breakpoint-md-up} {        
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-bottom: $gutter;
+      }       
+      
+      .mktoHtmlText p {
+        /* hack for the gdpr notice since marketo classes are bad */
+        font-size: 12px;        
+        width: 60vw;
+        text-align: left;
+        margin-left: 40px;
+        
+        @media #{$breakpoint-md-up} {
+          width: 65vw;
+          max-width: 900px;
+          margin-left: 0;
+          text-align: center;
+        }
+      }
+  
+      .mktoFieldWrap {            
+        display: grid;
+        grid-column-gap: $gutter;
+        grid-template-columns: 1fr 1fr 0;
+        @media #{$breakpoint-xs-only} {
+    	    grid-template-columns: 0.5fr 1fr 0;
+        }      
+        
+        grid-template-areas:  "left right hidden" ". error error";
+        
+        .mktoFieldWrap { /* nested ones */
+          display: block;
+        }
+        
+        label {
+          grid-area: left;
+          display: flex;
+          align-items: center;       
+          text-align: right;
+          justify-content: right;
+          justify-self: right;     
+          
+        }
+        
+        input {
+          grid-area: right;
+        }
+      
+        .mktoError {
+          grid-area: error;
+          justify-self: left;
+        }       
+      }   
+    }
+  }
+
+  &#mktoForm_1129 {
+    margin-top: $gutter*2; 
+    color: $brand-gray !important;
+    
+    
+  	@media #{$breakpoint-md-up} {        
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+  
+      margin-bottom: $gutter;
+      
+      
+      // hack for the message
+      
+      #contactUsFormMessage {
+        min-width: 800px;
+        position: absolute;
+        margin-left: 250px;        
+      }
+  
+    	textarea{
+    		min-height: 150px !important;
+    	}
+    	
+    	.mktoButtonRow {
+      	grid-column: 1 / span 2;
+      	padding-top: $gutter*2;
+      	
+      	.mktoButtonWrap {
+        	margin-left: auto !important;
+      	}
+    	}    	    	
+    }
+  }
+}  
+
+body.home .mktoForm {
+  
+  &#mktoForm_1156, &#mktoForm_1207 { // homepage form only
+    @include col('md', 10);
+    @include col-offset('md',1);  
+
+    /* "Simple" CTA */
+  /*
+    input#Email {
+      font-size: 16px;
+      padding: $gutter*.5;
+      width: 100%;
+      box-sizing: border-box;
+      @include borders('pill');    
+      border: 1px solid $brand-form-gray;    
+    }
+  */
+    
+    label[for=statusReason] {
+      clear: both;
+      display: block;
+      margin-top:$gutter*.5;
+      margin-left: 20px;
+    }
+    
+  /* gc not sure what this is
+    @media #{$breakpoint-md-up} {  
+      .mktoLogicalField {
+        position: relative;
+        top: -1.35em;
+      }
+    }
+  */
+  
+  .mktoFieldWrap
+    input, select, textarea {
+      @include borders('pill', $brand-gray, 1);
+//      color: $brand-white;
+      
+      padding: $gutter*.5;
+      background: white;
+      font-style: italic;
+    }
+  
+
+
+    .mktoButton {
+      font-weight: bold;
+    }
+    label { 
+      display: inline-block !important;
+      text-align: right;
+      color: $brand-dark-blue;
+    }
+    
+    label, input, select, textarea {
+      min-width: 100px;
+    }
+
+    .mktoButtonRow {
+      margin-top: 0;
+    }
+
+  }
+}  
+
+body.single-portfolio-item .mktoForm {
+  .mktoFormRow {
+    .mktoHtmlText p {
+      @media #{$breakpoint-md-up} {
+        max-width: none !important;
+      }
+    }
+  }
+
+}

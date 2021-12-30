@@ -1,0 +1,41 @@
+.qodef-content .qodef-container-inner {
+  .cta-block {
+    background-image: linear-gradient(180deg, $brand-dark-blue 0%, #0B4888 54%, #0071CE 100%);
+    box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
+    @include borders(curved, transparent);      
+    
+    padding: $gutter*4;
+    
+    * {
+      color: $brand-white;
+      
+      .cta-block--action {
+        position: relative; // to give own z-index vals
+        z-index: 5;
+        a {
+          @include fancy-button($brand-white);
+          color: $brand-purple !important;
+          display: inline-block;
+          font-weight: bold;
+          
+          &:hover {
+            color: $brand-white !important;
+            border: 3px solid $brand-white;
+          }
+        }
+      }
+      
+    }
+    &.wp-block-columns {
+      margin-left: 0 !important;
+      > .wp-block-column {
+        align-self: center;
+        
+        figure {
+          text-align: right;
+        }
+      }
+    }
+    
+  }
+}

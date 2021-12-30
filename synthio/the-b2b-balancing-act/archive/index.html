@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Continuous scrolling - fullPage.js</title>
+    <meta name="author" content="Matthew Howell" />
+    <meta name="description" content="fullPage continuous scrolling demo." />
+    <meta name="keywords" content="fullpage,jquery,demo,scroll,loop,continuous" />
+    <meta name="Resource-type" content="Document" />
+    
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Covered+By+Your+Grace" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+    
+    <link rel="stylesheet" type="text/css" href="css/examples.css" />
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+    
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    
+    <script type="text/javascript" src="js/jquery.fullPage.min.js"></script>
+    
+    <script type="text/javascript" src="js/examples.js">
+    </script>
+    
+    <script src="js/windowResize.js"></script>
+    
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#fullpage').fullpage({
+
+                anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', '5thPage', '6thPage', '7thPage', '8thPage', '9thPage', '10thPage', '11thPage', '12thPage', '13thPage', '14thPage'],
+                menu: '#menu',
+                normalScrollElements: '.placeholder',
+            });
+        });
+    </script>
+    
+<!--<script>
+       
+		$(function() {
+			$(".meter > span").each(function() {
+				$(this)
+					.data("origWidth", $(this).width())
+					.width(0)
+					.animate({
+						width: $(this).data("origWidth")
+					}, 1200);
+			});
+		});
+	</script> -->
+
+</head>
+
+<body>
+
+    <ul id="menu">
+        <li data-menuanchor="firstPage" class="active"><a href="#firstPage">•</a></li>
+        <li data-menuanchor="secondPage"><a href="#secondPage">•</a></li>
+        <li data-menuanchor="3rdPage"><a href="#3rdPage">•</a></li>
+        <li data-menuanchor="4thPage"><a href="#4thPage">•</a></li>
+        <li data-menuanchor="5thPage"><a href="#5thPage">•</a></li>
+        <li data-menuanchor="6thPage"><a href="#6thPage">•</a></li>
+        <li data-menuanchor="7thPage"><a href="#7thPage">•</a></li>
+        <li data-menuanchor="8thPage"><a href="#8thPage">•</a></li>
+        <li data-menuanchor="9thPage"><a href="#9thPage">•</a></li>
+        <li data-menuanchor="10thPage"><a href="#10thPage">•</a></li>
+        <li data-menuanchor="11thPage"><a href="#11thPage">•</a></li>
+        <li data-menuanchor="12thPage"><a href="#12thPage">•</a></li>
+        <li data-menuanchor="13thPage"><a href="#13thPage">•</a></li>
+        <li data-menuanchor="14thPage"><a href="#14thPage">•</a></li>
+    </ul>
+
+
+
+    <div id="fullpage">
+        <div class="section active" id="section0">
+            <h1 class="header">The B2B Balancing Act</h1>
+            <h2 class="animated" id="subhead">How Top Marketers Are Integrating Targeted Account Efforts With Lead Gen Strategies</h2>
+
+
+            <img src="imgs/fullPage.png" />
+        </div>
+
+        <div class="section" id="section1">
+            <div class="placeholder">
+                <div class="copyContainer">
+                    <p><span>Many B2B companies have launched ABM initiatives,</span> but many are struggling with how to balance these more targeted programs versus traditional demand generation. While marketing teams are realizing that the precise focus of ABM requires deeper and more accurate contact data, they are also looking for ways to adapt and borrow from the traditional programs and strategies they have successfully utilized for years in broader acquisition campaigns. The emerging reality, according to industry thought leaders and many experienced B2B practitioners, is both ABM and demand gen have a role to play in today’s B2B marketing efforts to prioritize high-value accounts and identify new prospects. Finding the healthy balance between the two is the goal, and industry experts agreed that embracing ABM is not simply a matter of flipping a switch. This interactive white paper will discuss: <br/></p>
+
+                    <ul class="animated introBull">
+                        <li>Where traditional lead gen strategies and ABM diverge and overlap;</li>
+                        <li>Matching targeted personas to targeted accounts;</li>
+                        <li>Target account selection and engagement;</li>
+                        <li>Where buyer and account personas fit in;</li>
+                        <li>Optimizing account and buyer engagement;</li>
+                        <li>Integration best practices; and</li>
+                        <li>An execution roadmap.</li>
+
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="section" id="section2">
+            
+<div class="meterContain animated">
+            <div class="meter">
+			<span style="width: 75%; font-size: 3.2rem; text-align: right; color: #181f35; padding-right: 5px;">75%</span>
+		      </div>
+</div>
+            <p style="margin-top: 60px;">In fact, <b style="color: #a0cd4f;">72% of marketers</b> in Demand Gen Report’s Demand Generation Benchmark Survey said they were executing both approaches and would continue to focus at least half of their efforts on traditional demand gen. More than a third said demand gen would remain their main focus.
+            </p>
+        </div>
+
+
+
+        <div class="section" id="section3" style="overflow: scroll;">
+            <div class="slide active" id="slide1">
+
+                <div class="placeholder">
+
+                    <h3>Traditional Demand Gen vs. ABM: Approach, Processes, Technology
+                    </h3>
+
+                    <p>By now, it’s common knowledge that traditional demand gen focuses on a mix of inbound and outbound marketing efforts, while ABM skews more toward targeted outbound offers.
+                        <br/><br/> “You’re often targeting accounts that have not yet raised their hand or expressed a specific need for your solutions. As such, more emphasis needs to be placed on building initial awareness, interest and relevancy to inspire them to want to learn more,” said Tyler Lessard, VP, Vidyard.
+
+                    </p>
+
+
+                </div>
+
+
+
+            </div>
+            <div class="slide" id="slide2">
+                <div class="placeholder">
+                    <p><span>By devoting resources to a defined, carefully curated set of accounts,</span> marketers accustomed to years of volume-and-velocity demand generations will need to adjust their expectations, said Eric Wittlake, Senior Analyst, marketing practice, TOPO. “But it is the focus that makes the high-impact programs and outsized returns of account-based marketing possible.”
+                        <br/><br/> The single biggest process difference is “transitioning from lead handoff to joint lead ownership,” said Patrice Greene, President, Inverta. <b>“With ABM, the entire account is considered the prospect. Until the last few years, the underlying database was built assuming the individual was the target.”</b> </p>
+                </div>
+            </div>
+            <div class="slide" id="slide3">
+                <div class="placeholder" style="max-width: 800px; margin: auto;">
+                    <div class="compareDiv1">
+                        <h4>Lead Generation</h4>
+                        <ul>
+                            <li>People-centric</li>
+                            <li>Larger quantity, smaller accounts</li>
+                            <li>Traditional marketing practice</li>
+                            <li>Results in net-new customers</li>
+                            <li>Larger audiences</li>
+                        </ul>
+                    </div>
+                    <div class="compareDiv2">
+                        <h4>ABM</h4>
+                        <ul>
+                            <li>Account-centric</li>
+                            <li>Smaller quantity, larger accounts</li>
+                            <li>Traditional sales practice</li>
+                            <li>Results in customer cross-sell/upsell</li>
+                            <li>Smaller audiences</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="slide" id="slide4">
+                <div class="placeholder">
+                    <p><span>Technology is providing visibility into account-level data,</span> measuring marketing’s effectiveness in targeting accounts, orchestrating across channels to engage accounts and other tools, and Greene says many marketing technology solutions are applicable and valuable in both approaches.
+                        <br/><br/> David Lewis, CEO, DemandGen International, argues that the biggest difference with an ABM approach will come from how marketers go about operationalizing account data for targeting and content purposes. <b>“Having a well-defined set of target accounts in your CRM is a key first step. However, you also should be augmenting these accounts with key meta-data such as firmographic elements including their vertical, geo, size and other elements to help with content personalization and segmentation.”</b> </p>
+                </div>
+            </div>
+
+            <div class="slide" id="slide5">
+                <div class="placeholder">
+                    <p><span>“Traditional demand gen too often has been driven by inside-out, ‘buy my solution’ generic messaging,</span> said Rob Leavitt, Senior VP of ITSMA. “Potential buyers tune out because the content doesn’t speak to their issues, needs or situations. The reason ABM has taken off and been so successful is that marketers are taking a much more targeted, outside-in, issues-based approach: Identify the most relevant accounts for your solutions, invest heavily in buyer and market insight so you really understand what matters to those accounts (and the key decision makers and influencers within them), and then design customized and personalized campaigns to reach them.”
+                        <br/><br/> <b>“There’s a place for both traditional demand gen and ABM, and the organization needs to figure out when and where in their growth strategy inbound fits best versus ABM,” said Greene. </b></p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="section" id="section3-5">
+            <div class="placeholder">
+                <h3>Automating Account Selection</h3>
+                <p>New advancements in technology are helping marketers to leverage the most powerful aspects of both strategies. Arguably the biggest shared component is lead identification, although the method differs: Traditional lead generation focuses on quantity, while lead generation that powers ABM stresses quality, identifying the most likely buyers. To avoid narrowing the field down too much, ABM needs to borrow some traditional lead gen tactics.
+                    <br/><br/> SiriusDecisions, for example, recently rolled out a new demand waterfall framework designed to help companies better define and target their total addressable market by honing in on buying groups—a collection of personas—rather than individual leads and inquiries. The updated framework also codifies the process of identifying and targeting active buyers.
+                    <br/><br/> Armed with a client’s closed-won account information from a CRM, leading data management firms can extrapolate commonalities from that existing buyer list, layering on additional firmographic and technographic qualifiers, to not only build out account personas, but to also construct contact (or buyer) personas as well. This process arms marketers with additional insight into their customers so that they can then identify new accounts that share those commonalities. These data points reflect the most commonly found industries, annual revenue ranges, employee counts, and installed software usage; contact personas pinpoint the most popular titles, skills, group affiliations, and key words within an existing customer base.
+                </p>
+            </div>
+        </div>
+
+        <div class="section" id="section4" style="overflow: scroll;">
+            <div class="slide active" id="slide1">
+                <h3>What Are The Common Gaps For Determining And Engaging Accounts?
+                </h3>
+
+                <h3 style="color: #FFF; font-size: 3.5rem;">Meet Your Presenters</h3>
+                
+
+
+            </div>
+            <div class="slide" id="slide2">
+                <h3>Matt Heinz</h3>
+                
+                <div class="flipcard">
+    <div class="flipcard--front card">
+      <img src="images/matt.jpeg">
+        <br/><br/><p><b>President Heinz Marketing </b></p>
+    </div>
+    <div class="flipcard--back card">
+      <p>Many companies simply go after the largest accounts, the biggest logos. But it’s critical also to evaluate which companies are most likely to buy. What criteria or buying signals exist that indicate some organizations are more receptive to your message? How well do you understand the entire buying committee to figure out which role is most likely to engage first, to be the first evangelist of your deal internally?
+                </p>
+    </div>
+  </div>
+
+        <p style="color: #FFF;">Click to flip cards and read insights</p>        
+
+
+
+
+            </div>
+            <div class="slide" id="slide3">
+                  <h3>Tyler Lessard</h3>
+                
+                <div class="flipcard">
+    <div class="flipcard--front card">
+      <img src="images/Tyler_20head_20shot_20-_20small.jpg">
+        <br/><br/><p><b> VP, Vidyard </b></p>
+    </div>
+    <div class="flipcard--back card">
+      <p>Most businesses still rely on demographic and firmographic data to identify accounts, but those fall short in helping understand which companies may have an immediate need. Businesses should start layering in more behavioral data to capture signals that can suggest which of those businesses may have actual interest or intent.
+                </p>
+    </div>
+  </div>
+
+<p style="color: #FFF;">Click to flip cards and read insights</p>
+            </div>
+            <div class="slide" id="slide4">
+                  <h3>Eric Wittlake</h3>
+                
+                <div class="flipcard">
+    <div class="flipcard--front card">
+      <img src="images/wittlake.jpg">
+        <br/><br/><p><b>Senior Analyst, Marketing Practice, TOPO</b></p>
+    </div>
+    <div class="flipcard--back card">
+      <p>Two of the most damaging gaps we see are focusing on driving ‘leads’ only from marketing tactics and not taking the time to align with sales on the account list. When marketing doubles down on the wrong accounts, it reinforces the challenges many sales and marketing teams still have. In ABM, marketing and sales are focused on the accounts everyone believes are most important for the business. </p>
+    </div>
+  </div>
+<p style="color: #FFF;">Click to flip cards and read insights</p>
+
+            </div>
+            
+        </div>
+
+        <div class="section" id="section5" style="overflow: scroll;">
+            <div class="slide active" id="slide1">
+                <div class="placeholder">
+                    <h3>Matching Targeted Personas To Targeted Accounts</h3>
+                    <p>With large buying centers and multiple buying groups now the norm in B2B, pinpointing the right individuals and data points to focus on is essential to help create relevant and strategic messages. Buyer personas and account personas are essentially separate, and require different approaches. The process for identifying best fit accounts revolves around the analysis of existing customer account data, but the process for identifying best fit contacts relies on an extensive analysis of every person involved in each of those closed-won opportunities.
+                    </p>
+                </div>
+            </div>
+            <div class="slide" id="slide2">
+                <div class="placeholder">
+                    <p><span>Because people—not accounts—sign contracts and checks, individuals are the endgame with ABM.</span> There are far more data points to analyze and understand for persona selection due to the complexity and depth of the modern buying group. Marketers must consider the variety of roles involved in the process and deliver relevant messaging to each segment. The decision makers in the buying group are often affected by influencers and potential end-users, so it is imperative to wholly understand each type of stakeholder in the overall purchase decision to ensure relevancy and engagement. Leveraging demographic and behavioral data is key to determining the persona behind each stakeholder.
+                        <br/><br/> Once marketers have identified net-new ideal target accounts as well as ideal targeted personas, they must now drill down on identifying the actual person that not only fits the persona, but also works at the target account. This is one of the more difficult parts to fully defining the target audience; although it can be done manually, there are also data solutions and tools that can automate this matching process.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section" id="section6" style="overflow: scroll;">
+            <div class="slide active" id="slide1">
+                <h3>What Value Can B2B Orgs Gain From Leveraging Both Buyer And Account Personas?
+                </h3>
+
+                <h3 style="font-size: 3.5rem; color: #FFF;">Meet Your Presenters</h3>
+
+
+            </div>
+            <div class="slide" id="slide2">
+                <h3>Rob Leavitt</h3>
+                
+                <div class="flipcard">
+    <div class="flipcard--front card">
+      <img src="images/RobLeavitt-2016-2.jpg">
+        <br/><br/><p><b>SVP, ITSMA</b></p>
+    </div>
+    <div class="flipcard--back card">
+      <p>The real power of ABM is moving beyond personas to identify and understand actual named accounts and specific individuals. Buyer and account personas can help with things like content development and campaign planning, with two caveats. First, they need to be based on deep research on buying behavior for solutions like the ones you’re selling. Second, even great personas are still only useful as guides. Personalization based on insight into the specific named individuals and accounts is still the most effective way to do ABM.
+                </p>
+    </div>
+                    <p style="color: #FFF !important;">Click to flip cards and read insights</p>
+  </div>
+
+                
+
+
+
+
+            </div>
+            <div class="slide" id="slide3">
+                  <h3>Patrice Greene</h3>
+                
+                <div class="flipcard">
+    <div class="flipcard--front card">
+      <img src="images/patrice.jpg">
+        <br/><br/><p><b>President, Inverta </b></p>
+    </div>
+    <div class="flipcard--back card">
+      <p>n an ABM scenario, the company context is always going to trump the individual’s need. The account’s persona—or, specifically, the insights and research that reveal what the account is reacting to internally or externally—should be the anchor driving the creation of content to fuel conversations.</p>
+    </div>
+                    <p style="color: #FFF !important;">Click to flip cards and read insights</p>
+  </div>
+
+
+            </div>
+            <div class="slide" id="slide4">
+                  <h3>David Lewis</h3>
+                
+                <div class="flipcard">
+    <div class="flipcard--front card">
+      <img src="images/davidlewis.jpg">
+        <br/><br/><p><b>CEO, DemandGen International</b></p>
+    </div>
+    <div class="flipcard--back card">
+      <p>Buyers need to learn why your solution is right for them (the buyer persona) and why it’s right for their organization (the account persona).</p>
+    </div>
+                    <p style="color: #FFF !important;">Click to flip cards and read insights</p>
+  </div>
+
+
+            </div>
+        </div>
+        
+        <div class="section" id="section7">
+
+            <div class="quizBox">
+                <p>The technologies I plan to use for ABM and demand gen are:<br/> <select class="styledSelect">
+            <option>&nbsp;</option>
+  <option value="analytics">Analytics &amp; reporting tools
+</option>
+  <option value="predictive">Predictive tools
+</option>
+  <option value="campaign">Campaign execution &amp; orchestration
+</option>
+  <option value="data">Data &amp; augmentation
+</option>
+            <option value="insight">Insights &amp; intelligence</option>
+            <option value="ad">Account-based advertising
+</option>
+</select>
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="section" id="section8" style="overflow: scroll;">
+            <div class="slide active" id="slide1">
+                <h1 class="caseStudy">See How A Shift in <span>Lead Gen Strategy</span> Paid Off For Administrate
+                </h1>
+            </div>
+            <div class="slide" id="slide2">
+                <div class="placeholder">
+                    <p><span>Over the past several years, Administrate,</span> a training software provider, has focused its marketing efforts on identifying leads that better align with its evolving product.
+                        <br/><br/> “We have had to adjust our lead generation strategy a few times in the past few years to target the right people,” said Katie Vernon, Administrate’s Marketing Delivery Executive. “A year ago, for example, we were targeting training departments within companies. As our product has evolved and its capabilities expanded, our target clients have as well. We realized we were really a better fit for larger companies that sell training services.    <br/><br/> Vernon said the company also reduced its reliance on "spray and pray" marketing and relied more on a persona-based approach.
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="slide" id="slide3">
+                <div class="placeholder">
+                    <p><span>“We have identified a few different types of buyers within the training market and have catered email messages to them</span> based on the <b style="font-weight: 900; font-style: italic;">needs</b> we have identified for each persona. Synthio has played a huge part in getting us better leads because these personas are based on industry, job title and company size. The software has allowed us to filter prospects based on these specs.
+                        <br/><br/> Working with Synthio also allowed Administrate to more than double its Middle East-North Africa contact pool from 9,000 to more than 19,000 names in the last five months. <br/><br/> “Beyond quantity, we are more interested in the improved quality of leads,” Vernon said. “We like to be able to add companies and websites and generate leads quickly instead of relying on manually going through professional social networks or trade shows.”
+
+
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="section9" style="overflow: scroll;">
+            <div class="slide active" id="slide1">
+                <div class="placeholder">
+                    <h3>Optimizing Content Engagement By Aligning Accounts With Personas
+                    </h3>
+                    <p>Once the optimal audience is identified, the right content strategy needs to be implemented to engage those contacts. However, experts noted that one of the biggest mistakes seen among people going all-in on an ABM strategy is they only do account-level campaigns.
+                       
+                    </p>
+                </div>
+            </div>
+            <div class="slide" id="slide2">
+                <div class="placeholder">
+                <p>
+                    <span>“What we’ve found</span> is that if you start to look at both accounts and segments by personas or buying groups, you can come up with really targeted, thoughtful micro-campaigns that span multiple companies,” said Matthew Wellschlager, VP of Marketing, CEROS. “You can take 50 very similar companies and do a small campaign to their accounts people and something that’s more targeted. That can then help you identify who the most engaged people are and who you want to nurture.”
+                    <br/><br/>
+                    This deeper insight can enable marketers to identify key pain points and areas of interest which can be leveraged in the content production process—ultimately leading to the creation of more relevant and contextual content.
+                    <br/><br/> “Being thoughtful with your content and trying to find ways to stand out are really important,” Wellschlager added. “You have to create content that people can connect with quickly. Moving away from static content is absolutely pivotal to being intelligent with your time.”</p>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="section" id="section10" style="overflow: scroll;">
+            <div class="slide active" id="slide1">
+                <h1 class="caseStudy">Learn SPI’s Winning Formula For Engagement: <span>Quality Contacts + Content</span>
+
+                </h1>
+            </div>
+            <div class="slide" id="slide2">
+                <div class="placeholder">
+                    <h3>Quality</h3>
+                    <p><span>Dario F. Priolo, CMO, ABM &amp; Demand Gen Practice Leader at  SPI,</span> has seen that a twin strategy combining carefully targeted contacts and relevant content produces higher ABM ROI.
+                        <br/><br/> “Successful ABM execution requires identifying the right contacts in an account and engaging them with relevant, high-value content,” Priolo said. SPI teamed up with Synthio to accomplish the first half of that strategy.
+                        <br/><br/> “Synthio makes it easy to find the depth and breadth of contacts we need to drive our program. I especially value the quality of Synthio's contact information,” he added.
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="slide" id="slide3">
+                <div class="placeholder">
+                    <h3>Contacts + Content</h3>
+                    <p><span>The payoff for SPI</span> has been significantly higher delivery of emails than in the past, when the firm relied on other technologies.
+                        <br/><br/> Synthio’s data expertise also streamlined creation of a robust contact base.
+                        <br/><br/> “Prior to becoming a Synthio customer, we did an inordinate amount of slow, manual research and list building. Synthio has helped us save time and money, but most importantly, enabled successful execution of our ABM program,” Priolo added.
+
+                    </p>
+                </div>
+            </div>
+        </div>
+       
+        
+        <div class="section" id="section12">
+
+            <div class="quizBox">
+                <p>My biggest priority this year to balance ABM and demand gen is:<br/> <select class="styledSelect">
+            <option>&nbsp;</option>
+  <option value="data">Improving Data Quality</option>
+  <option value="accounts">Matching Leads to Accounts</option>
+  <option value="personas">Building Out Account Personas</option>
+  <option value="targets">Identifying New Target Accounts</option>
+            <option value="sales">Aligning With Sales Aroung Priorities</option>
+</select>
+                </p>
+
+            </div>
+
+        </div>
+        
+        
+
+        
+
+        
+
+        <div class="section section14" id="14thPage" style="overflow: scroll;">
+            <div class="slide active" id="slide1">
+                <h3>Integrating ABM and Lead Gen: An Execution Roadmap
+                </h3>
+
+                <p>Here is a quick breakdown of the steps companies can take to identifying, targeting and engaging prospective customers with an integrated demand generation and ABM strategy.
+
+                </p>
+            </div>
+
+            <div class="slide" id="slide2">
+                <h3>Accounts</h3>
+                <p>
+
+                    <input type="checkbox"> Identify key accounts to target
+                    <br/>
+                    <input type="checkbox"> Analyze closed-won accounts, layer on more data<br/>
+                    <input type="checkbox"> Study commonalities
+                    <br/>
+                    <input type="checkbox"> Identify similar accounts
+
+                </p>
+            </div>
+
+            <div class="slide" id="slide3">
+                <h3>Personas</h3>
+                <p>
+
+                    <input type="checkbox"> Identify key personas to target using closed-won accounts, layer on more data<br/>
+                    <input type="checkbox"> Analyze commonalities<br/>
+                    <input type="checkbox"> Segregate contacts by role<br/>
+                    <input type="checkbox"> Identify similar contacts / leads
+                </p>
+            </div>
+
+            <div class="slide" id="slide4">
+                <h3>Combine</h3>
+                <p>
+
+                    <input type="checkbox"> Match targeted personas to targeted accounts
+                </p>
+                <br/><br/>
+                <h3>Implement</h3>
+                <p>
+
+                    <input type="checkbox"> Engage targets with email, calling campaigns, targeted ads, website personalization, social media, direct mail, in person events, etc.
+
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+    
+   
+    <script>
+    $('.flipcard').on('click', function() {
+  $(this).toggleClass('is-flipped');
+});
+    </script>
+   
+<script src="js/noframework.waypoints.js"></script>
+ <script src="js/animate2.js"></script>
+    
+
+</body>
+</html>

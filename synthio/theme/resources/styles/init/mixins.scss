@@ -1,0 +1,320 @@
+@mixin clearfix {
+    &::after {
+      @include pseudo;
+      clear: both;
+    }
+}
+
+@mixin has-full-pseudo($bleed: true) {
+  position: relative;
+  &::before {
+    @include pseudo();
+    width: 100%; height: 100%; top: 0; left: 0;
+
+    @if ($bleed) {
+      z-index: -1;
+      left: -100vw;
+      width: 200vw;
+    }
+  }  
+}
+
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+    content: $content;
+    display: $display;
+    position: $pos;
+}
+
+// mixin
+
+@mixin angle($pseudo: both, $flip: false, $angle: 1.25deg, $bleed: true) {
+  // Possible values for $pseudo are: before, after, both
+  @if $pseudo == 'before' or $pseudo == 'after' or $pseudo == 'both' {
+    position: relative;
+    z-index: 1;
+    $selector: if($pseudo == 'both', '&:before,&:after', '&:#{$pseudo}');
+
+    #{$selector} {
+      background: inherit;
+      content: '';
+      display: block;
+      height: 75%;
+      left: 0;
+      position: absolute;
+      right: 0;
+      z-index: -1;
+      -webkit-backface-visibility: hidden; // for Chrome Windows
+      
+      @if $bleed {
+        margin-left: -50vw;
+        width: 150vw;
+      }
+    }
+
+    @if $pseudo == 'before' {
+      #{$selector} {
+        top: 0;
+
+        @if $flip {
+          transform: skewY($angle * -1);
+          transform-origin: 0 0;
+        } @else {
+          transform: skewY($angle);
+          transform-origin: 100% 0;
+        }
+      }
+    }
+
+    @if $pseudo == 'after' {
+      #{$selector} {
+        bottom: 0;
+
+        @if $flip {
+          transform: skewY($angle);
+          transform-origin: 0 100%;
+        } @else {
+          transform: skewY($angle * -1);
+          transform-origin: 100%;
+        }
+      }
+    }
+
+    @if $pseudo == 'both' {
+      &:before {
+        top: 0;
+
+        @if $flip {
+          transform: skewY($angle * -1);
+          transform-origin: 0 0;
+        } @else {
+          transform: skewY($angle);
+          transform-origin: 100% 0;
+        }
+      }
+
+      &:after {
+        bottom: 0;
+
+        @if $flip {
+          transform: skewY($angle);
+          transform-origin: 0 0;
+        } @else {
+          transform: skewY($angle * -1);
+          transform-origin: 100%;
+        }
+      }
+    }
+  }
+}
+
+
+@mixin borders($key: straight, $color:$brand-gray, $important: false) {
+  @if $important {
+  	border-radius: map-get($borders, $key) !important;
+  	border: 1px solid $color !important;
+  } @else {
+  	border-radius: map-get($borders, $key);
+  	border: 1px solid $color;
+  }
+}
+
+@mixin shadowed($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+@mixin button-icon($icon, $type: s) {
+  display: block;
+  @include fa-icon;
+  @extend .fa#{$type};
+  @extend .fa-#{$icon};
+  color: white;
+  line-height: 30px;
+  margin-right: 1em;
+}
+
+%padded-box {
+	background: $brand-white;
+	padding: $gutter * 1.5;
+}
+
+%dotty-bg {
+  position: relative;
+  &::before {
+    position: absolute;
+    content: ' ';
+    display: block;
+    width: 200%;
+    margin: 0 -50% 0 -50%;
+    height: 100%;
+    z-index: -1;
+    background: url('/wp-content/uploads/2019/01/data-pattern-15percent.png');
+    background-size: cover;
+   
+  }
+}
+
+%grow-on-hover {
+  z-index: 1;
+  //@media #{$breakpoint-md-up} {  
+    transition: transform .25s ease-in-out;       
+    &:hover, &:active {
+      z-index: 2;
+      transform: scale(1.1);         
+    }  
+  //}
+}
+
+@function convert-angle($value, $unit) {
+  $convertable-units: deg grad turn rad;
+  $conversion-factors: 1 (10grad/9deg) (1turn/360deg) (3.1415926rad/180deg);
+  @if index($convertable-units, unit($value)) and index($convertable-units, $unit) {
+    @return $value
+             / nth($conversion-factors, index($convertable-units, unit($value)))
+             * nth($conversion-factors, index($convertable-units, $unit));
+  }
+  
+  @warn "Cannot convert `#{unit($value)}` to `#{$unit}`.";
+}
+
+/// Test if `$value` is an angle
+/// @param {*} $value - Value to test
+/// @return {Bool}
+@function is-direction($value) {
+  $is-direction: index((to top, to top right, to right top, to right, to bottom right, to right bottom, to bottom, to bottom left, to left bottom, to left, to left top, to top left), $value);
+  $is-angle: type-of($value) == 'number' and index('deg' 'grad' 'turn' 'rad', unit($value));
+  
+  @return $is-direction or $is-angle;
+}
+
+/// Convert a direction to legacy syntax
+/// @param {Keyword | Angle} $value - Value to convert
+/// @require {function} is-direction
+/// @require {function} convert-angle
+@function legacy-direction($value) {
+  @if is-direction($value) == false {
+    @warn "Cannot convert `#{$value}` to legacy syntax because it doesn't seem to be an angle or a direction";
+  }
+  
+  $conversion-map: ( 
+    to top          : bottom,
+    to top right    : bottom left,
+    to right top    : left bottom,
+    to right        : left,
+    to bottom right : top left,
+    to right bottom : left top,
+    to bottom       : top,
+    to bottom left  : top right,
+    to left bottom  : right top,
+    to left         : right,
+    to left top     : right bottom,
+    to top left     : bottom right
+  );
+    
+  @if map-has-key($conversion-map, $value) {
+    @return map-get($conversion-map, $value);
+  }
+  
+  @return 90deg - convert-angle($value, 'deg');
+}
+
+/// Mixin printing a linear-gradient 
+/// as well as a plain color fallback 
+/// and the `-webkit-` prefixed declaration
+/// @access public
+/// @param {String | List | Angle} $direction - Linear gradient direction
+/// @param {Arglist} $color-stops - List of color-stops composing the gradient
+@mixin linear-gradient($direction, $color-stops...) {
+  @if is-direction($direction) == false {
+    $color-stops: ($direction, $color-stops);
+    $direction: 180deg;
+  }
+  
+  background: nth(nth($color-stops, 1), 1);
+  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+  background: linear-gradient($direction, $color-stops);
+}
+
+
+%hover-gradient {
+ // #3C5FB4;  
+   background: linear-gradient(130deg, #3A5CB0, #0B285A);
+   * {
+     color: $brand-white;
+   }
+}
+
+
+@mixin fancy-button($background: #fff, $border: 3px) {
+  @include borders('pill');
+
+  padding: 10px 20px;
+  
+  display: inline-block;
+  align-items: center;
+  box-sizing: border-box;
+  position: relative;   
+  background: $background;  
+  color: #15254d !important;  
+  background-clip: padding-box;
+  border: solid $border transparent;
+  
+  &:hover {
+    text-decoration: none;
+    background: none;
+    color: #fff !important;
+    cursor: pointer;
+  }
+  
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -1;
+
+    margin: -$border; 
+    border-radius: inherit; 
+//    background: red;
+    background-image: linear-gradient(to right, $brand-purple, $brand-bright-blue);
+  }
+   
+}
+
+/*
+.gradient-box {
+
+  background: #fff;
+  background-clip: padding-box;
+  border: solid $border transparent;
+  border-radius: 1em;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -1;
+    margin: -$border;
+    border-radius: inherit;
+    background: linear-gradient(to right, red, orange);
+  }
+}
+*/
+
+
+@mixin brand-gradient($type: 'dark') {
+  @if $type == 'dark' {
+    background-image: linear-gradient(180deg, #15254d 0,#0b4888 54%,#0071ce 100%)
+  } @else {
+    background-image: linear-gradient(180deg, #42E8E0 0%, $brand-mid-blue 65%, #FFFFFF 100%);             
+  }    
+  
+
+  
+}

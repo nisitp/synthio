@@ -1,0 +1,17 @@
+.fc-teaser-grid {
+  @include row();
+  &__items {
+    @include row();
+    clear: both;  
+    
+/* Commented for now since was interfering with slick
+    & > div {
+      @include col(6); 
+      
+      @media #{$breakpoint-md-up} {          
+        @include col(3);
+      }
+    }
+*/
+  }
+}

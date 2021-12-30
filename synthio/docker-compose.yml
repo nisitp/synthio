@@ -1,0 +1,40 @@
+version: '3.3'
+
+services:
+  synthiodb:
+    image: mysql:5.7
+    volumes:
+      - ./db:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: synthio
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+
+  synthio:
+    depends_on:
+      - synthiodb
+    image: wordpress:latest
+    restart: always
+    working_dir: /var/www/html
+    environment:
+      WORDPRESS_DB_HOST: synthiodb:3306
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: root
+      WORDPRESS_DB_NAME: synthio
+      VIRTUAL_HOST: synthio.dev
+      VIRTUAL_PORT: 443
+      VIRTUAL_PROTO: HTTPS
+
+    volumes:
+      - ./theme:/var/www/html/wp-content/themes/synthio2019
+      - ./plugins:/var/www/html/wp-content/plugins
+      - ./from-b2b-to-b2p:/var/www/html/from-b2b-to-b2p
+      - ./the-b2b-balancing-act:/var/www/html/the-b2b-balancing-act
+      - ./uploads:/var/www/html/wp-content/uploads
+
+networks:
+  default:
+    external:
+      name: nginx-proxy

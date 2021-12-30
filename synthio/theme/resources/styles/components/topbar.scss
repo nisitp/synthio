@@ -1,0 +1,76 @@
+.topbar {
+    width: 100%;
+    background-color: lighten($brand-blue, 30%);
+    font-weight: 700;
+    font-size: 0.7em;
+    padding: 5px 0px;
+
+    &__inner {
+        @include row();
+    }
+
+    &__phone {
+        @include col(sm);
+        @include col(xs, 12);
+	a {
+	  text-decoration: none;
+	  color: inherit;
+	}
+    }
+
+    &__nav {
+        @include col(sm);
+        @include col(xs, 12);
+
+        @media #{$breakpoint-sm-up} {
+            text-align: right;
+        }
+
+        > div {
+            display: inline;
+
+            > ul {
+                display: inline;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+                > li {
+                    display: inline;
+                    margin-right: 10px;
+
+                    > a {
+                        color: inherit;
+                        text-decoration: inherit;
+                    }
+                }
+            }
+        }
+    }
+
+    &__form {
+        display: inline;
+
+        > span {
+            margin-right: 10px;
+        }
+
+        > input {
+            border: none;
+            font: inherit;
+            font-size: 0.8em;
+            font-weight: 400;
+            border: 2px solid white;
+            width: 70px;
+            outline-width: 0px;
+
+            &[type=submit] {
+                border-color: black;
+                text-transform: uppercase;
+                background-color: transparent;
+                width: auto;
+                cursor: pointer;
+            }
+        }
+    }
+}

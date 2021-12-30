@@ -1,0 +1,11 @@
+body.page-id-598{
+	.qodef-content{
+		.wpb_wrapper form{
+			@media #{$breakpoint-md-up} { 
+				width: 100% !important;
+			}
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+}

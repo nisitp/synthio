@@ -1,0 +1,675 @@
+.logo {
+    width: 100%;
+    max-width: 200px;
+    padding: 20px;
+    float: left;
+}
+
+.sponsored {
+    float: right;
+}
+
+.homepage-hero-module {
+  border-right: none;
+  border-left: none;
+  position: relative;
+height: 50%;
+    width: 100%;
+    margin: 0px !important;
+    padding: 0px !important;
+    background-color: #FFF;
+}
+.no-video .video-container video,
+.touch .video-container video {
+  display: none;
+}
+.no-video .video-container .poster,
+.touch .video-container .poster {
+  display: block !important;
+}
+.video-container {
+  position: relative;
+  bottom: 0%;
+  left: 0%;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: #FFF;
+}
+.video-container .poster img {
+  width: 100%;
+  bottom: 0;
+  position: absolute;
+}
+
+.video-container .title-container {
+  z-index: 1000;
+  position: absolute;
+  top: 20%;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
+
+.video-container video {
+  position: absolute;
+    left: -500px;
+  z-index: 0;
+  bottom: 0;
+}
+.video-container video.fillWidth {
+  width: 200%;
+    background-position: center !important;
+}
+
+.headline h1 {
+    margin-top: -60px;
+    color: #000;
+    font-family: "Lato", sans-serif;
+    font-size: 6rem;
+    line-height: 6.5rem;
+    
+}
+
+.headline h1 b {
+    font-size: 8.5rem;
+    font-weight: 900;
+}
+
+.lever {
+    background-image: url(../images/lever.png);
+    width: 800px;
+    height: 80px;
+    margin: auto;
+    background-repeat: no-repeat;
+    margin-top: 0px;
+    position: relative; 
+    left: -50%; 
+    z-index: 20;
+}
+
+.leverText {
+    position: relative; left: -50%; 
+    margin-top: -112px;
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 800px) {
+    
+    p, h1, h2 {
+        padding: 0 20px;
+    }
+    
+    ul {
+        margin-left: 20px;
+    }
+   
+.headline h1 {
+    margin-top: -50px;
+    color: #000;
+    font-family: "Lato", sans-serif;
+    font-size: 5.5rem;
+    line-height: 6rem;
+}
+
+.headline h1 b {
+    font-size: 6.5rem;
+    font-weight: 900;
+}
+
+.lever {
+    background-image: url(../images/lever.png);
+    width: 800px;
+    height: 80px;
+    margin: auto;
+    background-repeat: no-repeat;
+    margin-top: 0px;
+    position: relative; left: -50%; 
+}
+
+.leverText {
+    position: relative; left: -50%; 
+    margin-top: -90px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.7rem;
+    letter-spacing: 0.5px;
+}
+}
+
+.triLarge {
+    width: 100%; 
+    max-height: 375px; 
+    max-width: 200px; 
+    z-index: 99; 
+    opacity: 0.3;
+    }  
+
+.triSmall {
+    width: 50%; opacity: 0.3; right: 0; position: absolute; max-height: 200px; max-width: 100px;
+}
+
+@media (max-width: 800px) {
+    .triLarge, .triSmall {
+        display: none;
+    } 
+}
+
+.quoteImgContainer {
+    text-align: right;
+}
+
+@media (max-width: 800px) {
+    .quoteImgContainer {
+    text-align: center;
+}
+}
+
+.greenTriBG {
+    z-index: 90;
+    background-image: url(../images/greenTriBG.png); 
+    
+}
+
+.greenTriBG .body {
+    color: #FFF;
+    padding-top: 30px;
+}
+
+.greenTriBG ul {
+    padding-bottom: 40px;
+}
+
+.greyTri {
+    width: 100%; 
+    max-width: 80px; 
+    max-height: 170px; 
+    right: 0; 
+    position: absolute;
+}
+
+.greyTriR {
+    width: 100%; 
+    max-width: 120px; 
+    max-height: 260px; 
+    left: 0; 
+    position: absolute;
+}
+
+@media (max-width: 800px) {
+    .greyTri, .greyTriR {
+    display: none;
+}
+}
+
+.quizQ {
+    border: 5px solid #77bd43;
+    margin: 30px 10px;
+    padding: 20px;
+    background-color: #FFF;
+    z-index: 99;
+}
+
+.quizQ h3 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.quizQ .body {
+    margin-top: 10px;
+    padding-top: 0;
+    font-weight: 600;
+    font-size: 3rem;
+    line-height: 4rem;
+    color: #181d33;
+}
+
+.styledSelect {
+    font-family: 'Covered by Your Grace', sans-serif;
+    font-size: 2.2rem;
+    letter-spacing: 1.3px;
+    color: #77bd43;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+   border: none;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+border-radius: 0px;
+   box-shadow: 0px 2px 0px #888888;
+   height: 50px;
+   padding: 5px; /* If you add too much padding here, the options won't show in IE */
+   width: 90%;
+}
+
+
+.quoteImg {
+    width: 100%; 
+    max-width: 80px; 
+    margin-top: 45px;
+}
+
+.greenTriBG .quizQ {
+    border: 5px solid #181d33;
+    background-color: white;
+}
+
+h1 {
+    color: #181d33;
+    font-family: "Lato", sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.dkBlueBG {
+    background-color: #181d33;
+    padding-top: 30px;
+}
+
+.dkBlueBG h2 {
+    font-size: 3rem;
+    line-height: 4rem;
+    color: #77bd43;
+    text-align: center;
+}
+
+.footer h2{
+    color: #FFF !important;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.footer {
+    text-align: center;
+    padding-bottom: 60px;
+}
+
+.CTAbutton {
+      width: 100%;
+    max-width: 200px;
+    padding: 15px 40px;
+    background-color: #77bd43;
+    color: #FFF;
+    font-family: "Lato", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 1px; 
+    text-decoration: none;
+}
+
+.CTAbutton:hover {
+    background-color: #FFF;
+    color: #77bd43;
+}
+
+.dkBlueBG ul {
+    list-style-position: inside;
+    color: #FFF;
+    text-align: center;
+}
+
+.tweetCallout {
+    color: #000;
+    font-weight: 600;
+    font-size: 2.3rem;
+    line-height: 3rem;
+}
+
+.twitterIcon {
+    width: 100%;
+    max-width: 60px;
+}
+
+.twitterContainer {
+    text-align: right;
+}
+
+@media (max-width: 800px) {
+   .twitterContainer {
+    text-align: center;
+       padding-bottom: 20px;
+}
+    
+    .tweetCallout {
+        text-align: center;
+    }
+}
+
+button.accordion {
+    background-color: #181d33;
+    padding: 20px 0;
+    cursor: pointer;
+    width: 102%;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+
+
+.accordion h2 {
+    color: #FFF;
+    padding-bottom: 15px;
+    text-align: left;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: #5b5b5b;
+}
+
+.greenTriR {
+    height: 100%;
+    max-height: 80px;
+    padding-top: 20px;
+}
+
+.greenTriD {
+    width: 100%;
+    max-width: 60px;
+    padding-top: 35px;
+}
+
+
+div.panel {
+    background-image: url(../images/greyTriBG.png);
+    background-position: right;
+    background-size: cover;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    border-bottom: 8px solid #77bd43;
+}
+
+
+/* flipcard */
+
+.card {
+  background: #f9f9f9;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+    min-height: 375px;
+}
+
+.flipcard {
+    text-align: center;
+max-width: 500px;
+    margin: auto;
+  position: relative;
+  -webkit-perspective: 1200px;
+          perspective: 1200px;
+}
+
+.flipcard p {
+    color: black !important;
+}
+
+.flipcard p b {
+    color: #77bd43;
+    font-family: "Lato", sans-serif;
+    font-weight: 600; 
+    font-size: 2.5rem;
+}
+
+.flipcard img {
+    vertical-align: middle;
+   width: 100%;
+    max-width: 300px;
+}
+
+.flipcard--front, .flipcard--back {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: visibility .5s ease, -webkit-transform .5s ease;
+  transition: visibility .5s ease, -webkit-transform .5s ease;
+  transition: transform .5s ease, visibility .5s ease;
+  transition: transform .5s ease, visibility .5s ease, -webkit-transform .5s ease;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+}
+
+.flipcard--front {
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+}
+
+.flipcard--back {
+  visibility: hidden;
+  position: absolute;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.flipcard.is-flipped .flipcard--front {
+  visibility: hidden;
+  position: absolute;
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+}
+.flipcard.is-flipped .flipcard--back {
+  visibility: visible;
+  position: static;
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+}
+/*end flipcard*/
+
+.checklist .body {
+    padding: 0 0 0 10px;
+    margin-top: 0px;
+}
+
+.checklist {
+    padding: 20px 0;
+}
+
+.checklist:last-child {
+    padding-bottom: 50px;
+}
+
+.white {
+    color: #FFF;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+    font-size: 2.3rem;
+}
+
+.checkTable {
+    margin-left: 25px;
+}
+
+p, ul {
+    color: #FFF;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    line-height: 26px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+}
+
+ul {
+    padding: 10px 0 30px 20px;
+        
+}
+
+.centerDiv {
+    max-width: 80%; 
+    padding: 0 60px 0 60px;
+    margin: auto;
+}
+
+.textTrigger1 {
+    padding-top: 100px;
+}
+
+@media (max-width: 800px) {
+    .centerDiv {    
+        max-width: 100%;
+        padding: 0 60px 0 60px;
+        }
+    
+    .textTrigger1 {
+        margin-top: 0;
+    }
+
+}
+
+.typed-cursor{
+	opacity: 0;
+	-webkit-animation: blink 0.7s infinite;
+	-moz-animation: blink 0.7s infinite;
+	animation: blink 0.7s infinite;
+}
+
+p.body {
+    margin: 20px 0 0px 0;
+    color: #363636;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+}
+
+.sectionHeader {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 200px;
+     border-bottom: 5px solid #fe4f00;
+}
+
+.s1 {
+    background-image: url(../images/s1BG.png);
+    margin-top: 30px;
+}
+
+.s2 {
+    background-image: url(../images/s2BG.png);
+}
+
+.kites {
+    background-image: url(../images/Kites.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sHeader {
+    font-family: 'Roboto Mono', sans-serif;
+    color: #582c83;
+    font-size: 5rem;
+    font-weight: 300;
+    text-align: left;
+    margin: 0;
+    padding: 30px 5px 30px 10px;
+}
+
+.sHeader.textTrigger1 {
+    margin-top: 40px;
+}
+
+a.tweet {
+    text-decoration: none;
+}
+
+a.button {
+    background-color: #582c83;
+    color: #FFF;
+    padding: 10px 60px 10px 60px;
+    width: 100%;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 2.5rem; 
+    text-align: center;
+    letter-spacing: 1px;
+    text-decoration: none;
+    margin: 30px 0 30px 0;
+}
+
+a.button:hover {
+    background-color: #fe4f00;
+    color: #FFF;
+    text-align: center;
+    text-decoration: none;
+}
+
+.headerBG {
+    margin: 0px;
+    text-align: center;
+    background-color: #d8d8d8;
+    min-height: 350px;
+    border-bottom: 5px solid #fe4f00;
+    background: url(../images/header.png) no-repeat left top;
+    background-size: cover;
+}
+
+.headerText {
+    font-family: 'Roboto Mono', sans-serif;
+    color: #582c83;
+    font-size: 7rem;
+    font-weight: 500;
+    line-height: 6rem;
+    text-align: left;
+    margin-bottom: 0px;
+    position: relative;
+    margin-top: 10%;
+}
+
+.subhead {
+    font-family: 'Lato', sans-serif;
+    text-align: left;
+    font-weight: 300;
+    font-size: 4rem;
+    margin-top: 0px;
+    color: #363636;
+    clear: both;
+    position: relative;
+}
+
+.sideImages {
+    text-align: center;
+}
+
+.sideImages img {
+   width: 150px;
+    padding: 10px;
+}
+
+.tweet {
+    font-weight: bold;
+    color: #553880;
+}
+
+@media (max-width: 800px) {
+    .subhead {
+        padding:  0 0 0 0;
+        max-width: 100%;
+    }
+    
+    .headerText {
+         padding:  0 0 0 0;  
+        margin-top: 30px;
+    }
+}
+
+.icons {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.icons img {
+    max-height: 70px;
+}
+
+.subheadText {
+    font-family: 'Lato', sans-serif;
+    color: #000;
+    font-size: 3rem;
+    font-weight: 400;
+    text-align: left;
+    padding: 10px 0 20px 0;
+}
